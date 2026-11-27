@@ -337,3 +337,25 @@ ORDER BY a.nome ASC;
 
 
 
+select
+  u.nome AS nome_usuario,
+  s.ip_origem AS ip_origem,
+  s.user_agent AS navegador_dispositivo,
+  u.perfil
+From sessao_usuario s
+inner join usuario u on s.fk_usuario = u.id_usuario
+where u.perfil = 'COMUM'
+order by s.ip_origem DESC
+limit 5;
+
+
+
+
+
+
+
+
+
+
+
+
