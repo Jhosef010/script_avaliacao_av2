@@ -323,3 +323,17 @@ SELECT * FROM diagnostico_compatibilidade;
 -- 10. Testar tabela sessao_usuario
 SELECT * FROM sessao_usuario;
 
+select 
+  u.nome,
+  d.modelo,
+  a.nome,
+  dc.status
+From diagnostico_compatibilidade dc
+INNER JOIN usuario u on dc.fk_usuario = u.id_usuario
+INNER JOIN aplicativo a ON dc.fk_aplicativo = a.id_aplicativo
+inner join dispositivo d on dc.fk_dispositivo = d.id_dispositivo
+where dc.status = 'COMPATIVEL'
+ORDER BY a.nome ASC;
+
+
+
