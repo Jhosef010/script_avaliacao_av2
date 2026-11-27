@@ -323,6 +323,17 @@ SELECT * FROM diagnostico_compatibilidade;
 -- 10. Testar tabela sessao_usuario
 SELECT * FROM sessao_usuario;
 
+
+
+select
+  u.nome AS nome_usuario,
+  u.email AS email_usuario,
+  u.perfil AS perfil_usuario
+From usuario u
+where u.perfil = 'DESENVOLVEDOR'
+order by u.nome ASC;
+
+
 select 
   u.nome,
   d.modelo,
